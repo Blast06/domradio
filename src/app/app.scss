@@ -14,3 +14,20 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@import "./assets/scss/fontawesome.scss";
+@import "./assets/scss/solid.scss";
+@import "./assets/scss/brands.scss";
+
+//titulo de la app
+.titulo{
+    display: inline-block;
+    text-align: center;
+    margin-top: 8px;
+ 
+}
+
+//imagen-logo de la app
+.logo_img{
+    margin-top: 8px;
+}
