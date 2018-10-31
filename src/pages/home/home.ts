@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { EMISORAS } from '../../datos/emisoras';
 
 @Component({
   selector: 'page-home',
@@ -7,7 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  emisora = EMISORAS.splice(4);
+
+  constructor(public navCtrl: NavController, public navPrm:NavParams) {
+
+    console.log(navPrm.get('emisora'));
+    
 
   }
 

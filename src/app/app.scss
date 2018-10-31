@@ -19,6 +19,20 @@
 @import "./assets/scss/solid.scss";
 @import "./assets/scss/brands.scss";
 
+@font-face{
+    font-family: Balobai;
+    src: url('../assets/fonts/baloobai.woff2') format('woff2');
+}
+
+@font-face{
+    font-family: Opensans;
+    src: url('../assets/fonts/opensans.woff2') format('woff2');
+}
+
+*{
+    font-family: Balobai;
+}
+
 //titulo de la app
 .titulo{
     display: inline-block;

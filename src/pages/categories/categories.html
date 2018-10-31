@@ -7,12 +7,57 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>categories</ion-title>
+    <ion-title>Categorias</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <h4>Generos</h4>
+  <button class="right" ion-button clear small>Ver mas</button>
+
+  <ion-row>
+    <ion-col>
+      <img  src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[1])" >
+      <h4 class="track">Latinas</h4>
+    </ion-col>
+    <ion-col>
+      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[4])">
+      <h4 class="track">Merengue</h4>
+    </ion-col>
+  </ion-row>
+
+  <br>
+
+  <h4>Por region</h4>
+  <button class="right" ion-button clear small>Ver mas</button>
+
+  <ion-row>
+    <ion-col>
+      <img src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[10])">
+      <h4 class="track">Santiago</h4>
+    </ion-col>
+    <ion-col>
+      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[11])">
+      <h4 class="track">Santo Domingo</h4>
+    </ion-col>
+  </ion-row>
+
+  <h4>Por frecuencia</h4>
+  <button class="right" ion-button clear small>Ver mas</button>
+
+  <ion-row>
+    <ion-col>
+      <img src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[14])">
+      <h4 class="track">88.1FM</h4>
+    </ion-col>
+    <ion-col>
+      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[15])">
+      <h4 class="track">{{emisoras[15].nombre}}</h4>
+    </ion-col>
+  </ion-row>
+
 
 </ion-content>
