@@ -7,14 +7,13 @@
 </ion-header>
 
 <ion-content padding class="fondo">
-  <audio id="reproductor" src="https://14983.live.streamtheworld.com/Z101FM_SC" autoplay></audio>
+  <h3>{{ emisora.nombre }}</h3>
+  <!-- <audio id="reproductor" [src]="emisora.url" autoplay></audio> -->
+  <audio  [src]="emisora.url" ></audio>
   <img src="assets/imgs/rocker.gif" class="img_fondo">
-  <a id="player">
-    <!-- <div id="con-btn-play"> -->
-    <div>
-      <img src="assets/imgs/btn-pause.png" class="btn animated flip">
-    </div>
-  </a>
+
+      <img src="assets/imgs/btn-pause.png" class="btn animated flip" *ngIf="state" (click)="press(state)">
+      <img src="assets/imgs/btn-play.png" class="btn animated flip" *ngIf="!state" (click)="press(state)">
 
   <!-- <div class="btnredes animated shake">
 

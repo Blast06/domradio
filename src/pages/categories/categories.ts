@@ -23,6 +23,8 @@ export class CategoriesPage {
     //y afectaria las operaciones CRUD del mismo
     this.emisoras = EMISORAS.slice(0);
     this.latina = this.emisoras[0].url;
+
+    
     
     
   }
@@ -33,7 +35,7 @@ export class CategoriesPage {
 
   enviar(emisora){
 
-    console.log(emisora);
+    // console.log(emisora);
     
     this.navCtrl.push(HomePage, {emisora:emisora});
   }

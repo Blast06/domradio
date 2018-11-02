@@ -39,7 +39,7 @@ export const EMISORAS = [
     },
     {
         nombre: "Z101 FM",
-        z101_FM: "https://14943.live.streamtheworld.com/Z101FM_SC"
+        url: "https://14943.live.streamtheworld.com/Z101FM_SC"
     },
 
     {
