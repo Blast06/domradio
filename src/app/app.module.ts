@@ -6,6 +6,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+//FIREBASE
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyDv3b5kXs3WMhQfhjqRPHfVLAnIflonac0",
+  authDomain: "domradio-a03e0.firebaseapp.com",
+  databaseURL: "https://domradio-a03e0.firebaseio.com",
+  projectId: "domradio-a03e0",
+  storageBucket: "domradio-a03e0.appspot.com",
+  messagingSenderId: "403466093476"
+};
+
 
 //PAGES
 import { EmisorasPage } from './../pages/emisoras/emisoras';
@@ -25,10 +39,14 @@ import { PoliciesPage } from '../pages/policies/policies';
     PoliciesPage,
     TabsPage,
     CategoriesPage,
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +63,7 @@ import { PoliciesPage } from '../pages/policies/policies';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

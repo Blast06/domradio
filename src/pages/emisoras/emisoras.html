@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>emisoras</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <h4 text-center>Emisoras</h4>
+
+    <ion-row *ngFor="let emisora of generos | async">
+        <ion-col>
+          <img  [src]="emisora.img"   (click)="enviar(emisora)" >
+          <p class="track">{{emisora.nombre}}</p>
+        </ion-col>
+      </ion-row>
+    
 
 </ion-content>

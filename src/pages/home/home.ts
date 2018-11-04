@@ -1,13 +1,17 @@
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { EMISORAS } from '../../datos/emisoras';
+import { EMISORAS } from '../../datos/emisoras.data';
 import { Emisora } from '../../datos/emisoras.interface';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  items: Observable<any[]>;
 
   emisora: Emisora = {
     nombre: EMISORAS[9].nombre,
@@ -22,7 +26,13 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController, public navPrm: NavParams) {
+  constructor(public navCtrl: NavController, public navPrm: NavParams,
+              public afDB: AngularFireDatabase) {
+                this.items = afDB.list('regiones').valueChanges();
+
+                this.items.subscribe((data)=>{
+                  console.log(data);
+                })
 
 
 
@@ -30,7 +40,6 @@ export class HomePage {
     // console.log(navPrm.get('emisora'));
     if (navPrm.get('emisora')) {
       this.emisora = navPrm.get('emisora');
-
     }
 
     console.log("EMISORA EN CONSTRUCTOR HOME: ", this.emisora.nombre);
@@ -45,8 +54,6 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-
-
     this.audio.src = this.emisora.url;
     this.audio.load();
     this.audio.play();
