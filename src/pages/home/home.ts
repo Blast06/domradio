@@ -12,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
 export class HomePage {
 
   items: Observable<any[]>;
+  playing:boolean = false;
 
   emisora: Emisora = {
     nombre: EMISORAS[9].nombre,
@@ -20,9 +21,9 @@ export class HomePage {
 
 
   audio = new Audio();
+  audio_tag = document.getElementById("myVideo");
 
   state: boolean = true;
-
 
 
 
@@ -32,17 +33,24 @@ export class HomePage {
 
                 this.items.subscribe((data)=>{
                   console.log(data);
-                })
+                });          
 
+                this.audio.addEventListener("playing", () => this.playing = true, false);
+                this.audio.addEventListener("suspend", ()=> console.log("suspendido"));
 
+                /**
+                 * TODO
+                 * CREAR EL ABOUT
+                 * CAMBIAR ESTILOS/COLORES A TEXTOS, Y CAMBIAR BACKGROUND EN HOME
+                 * VER SI SE PUEDE ENCONTRAR MEJOR .GIF PAR EL HOME.
+                 * VER SI SE DEBE AGREGAR SPLASHCREEN
+                 * AGREGAR EMISORAS A FIREBASE(PARA PROBAR LOS DIVs)
+                 * EDITAR LAS IMAGENES Y PONER IMGS ACORDE A EMISORA.
+                 */
 
-
-    // console.log(navPrm.get('emisora'));
     if (navPrm.get('emisora')) {
       this.emisora = navPrm.get('emisora');
     }
-
-    console.log("EMISORA EN CONSTRUCTOR HOME: ", this.emisora.nombre);
 
   }
 
@@ -50,28 +58,28 @@ export class HomePage {
     console.log("ionviewwillleave");
     this.audio.pause();
     this.audio.currentTime = 0;
+  }
 
+  change_state(){
+    this.playing = false;
+    console.log(this.playing);
   }
 
   ionViewWillEnter() {
     this.audio.src = this.emisora.url;
     this.audio.load();
     this.audio.play();
-    console.log("readyState: ", this.audio.readyState);
-    if (this.audio.readyState > 0) {
-      console.log(this.audio.readyState);
-
-    }
-    if (this.audio.onplaying) {
-      console.log(this.audio.onplaying);
-
-    }
-
   }
 
-  press(estado) {
+  loading(){
+    this.audio_tag.addEventListener("progress", function(){
+     console.log("Buscando...");
 
-    console.log("antes de entrar a las condiciones: ", estado);
+    });
+  }
+
+
+  press(estado) {
 
     if (estado) {
       this.audio.pause();

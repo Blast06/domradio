@@ -8,11 +8,15 @@
 
 <ion-content padding class="fondo">
   <h3>{{ emisora.nombre }}</h3>
-  <!-- <audio id="reproductor" [src]="emisora.url" autoplay></audio> -->
-  <audio  [src]="emisora.url" ></audio>
-  <img src="assets/imgs/rocker.gif" class="img_fondo">
+  
+  <audio id="audio"  [src]="emisora.url" ></audio>
+  <img src="assets/imgs/rocker.gif" class="img_fondo" *ngIf="playing">
 
-      <img src="assets/imgs/btn-pause.png" class="btn animated flip" *ngIf="state" (click)="press(state)">
+  <img src="assets/imgs/dualring.svg" class="spinner"  *ngIf="!playing">
+  <p style="font-family: Balobai" *ngIf="!playing">Cargando..</p>
+
+
+      <img src="assets/imgs/btn-pause.png" class="btn animated flip" *ngIf="state && playing" (click)="press(state)">
       <img src="assets/imgs/btn-play.png" class="btn animated flip" *ngIf="!state" (click)="press(state)">
 
   <!-- <div class="btnredes animated shake">

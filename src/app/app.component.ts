@@ -1,3 +1,4 @@
+import { CategoriesPage } from './../pages/categories/categories';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';

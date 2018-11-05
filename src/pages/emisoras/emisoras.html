@@ -1,9 +1,4 @@
-<!--
-  Generated template for the EmisorasPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -17,7 +12,7 @@
 
   <h4 text-center>Emisoras</h4>
 
-    <ion-row *ngFor="let emisora of generos | async">
+    <ion-row *ngFor="let emisora of emisoras | async">
         <ion-col>
           <img  [src]="emisora.img"   (click)="enviar(emisora)" >
           <p class="track">{{emisora.nombre}}</p>

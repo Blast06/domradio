@@ -1,3 +1,4 @@
+import { SpinnerPage } from './../pages/spinner/spinner';
 import { CategoriesPage } from './../pages/categories/categories';
 import { TabsPage } from './../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,15 +12,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyDv3b5kXs3WMhQfhjqRPHfVLAnIflonac0",
-  authDomain: "domradio-a03e0.firebaseapp.com",
-  databaseURL: "https://domradio-a03e0.firebaseio.com",
-  projectId: "domradio-a03e0",
-  storageBucket: "domradio-a03e0.appspot.com",
-  messagingSenderId: "403466093476"
-};
-
 
 //PAGES
 import { EmisorasPage } from './../pages/emisoras/emisoras';
@@ -27,6 +19,7 @@ import { AboutPage } from './../pages/about/about';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PoliciesPage } from '../pages/policies/policies';
+import { firebaseConfig } from '../config/config';
 
 
 
@@ -39,6 +32,7 @@ import { PoliciesPage } from '../pages/policies/policies';
     PoliciesPage,
     TabsPage,
     CategoriesPage,
+    SpinnerPage,
 
   ],
   imports: [
@@ -58,6 +52,7 @@ import { PoliciesPage } from '../pages/policies/policies';
     AboutPage,
     PoliciesPage,
     CategoriesPage,
+    SpinnerPage,
   
   ],
   providers: [

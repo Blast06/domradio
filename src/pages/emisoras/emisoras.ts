@@ -19,6 +19,7 @@ export class EmisorasPage {
 
   number: any;
   title: string;
+  emisoras: Observable<any[]>;
 
   regiones: Observable<any[]>;
   por_frecuencia: Observable<any[]>;
@@ -33,17 +34,23 @@ export class EmisorasPage {
     switch (this.number) {
       case 1:
         this.title = "Generos";
-        this.generos = afDB.list('generos').valueChanges();
+        this.emisoras = afDB.list('generos').valueChanges();
+        console.log(this.emisoras);
         break;
 
       case 2:
         this.title = "Por Region";
-        this.regiones = afDB.list('regiones').valueChanges();
+        this.emisoras =  afDB.list('regiones').valueChanges();
+        console.log(this.emisoras);
+        this.emisoras.subscribe( (data) =>{
+          console.log(data);
+        });
         break;
 
       case 3:
         this.title = "Por Frecuencia";
-        this.por_frecuencia = afDB.list('frecuencia').valueChanges();
+        this.emisoras =  afDB.list('frecuencia').valueChanges();
+        console.log(this.emisoras);
         break;
 
       default:
