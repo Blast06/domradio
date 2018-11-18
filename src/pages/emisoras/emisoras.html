@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -12,12 +11,11 @@
 
   <h4 text-center>Emisoras</h4>
 
-    <ion-row *ngFor="let emisora of emisoras | async">
-        <ion-col>
-          <img  [src]="emisora.img"   (click)="enviar(emisora)" >
-          <p class="track">{{emisora.nombre}}</p>
-        </ion-col>
-      </ion-row>
-    
+  <ion-row>
+    <ion-col col-6 class="estilos" *ngFor="let emisora of emisoras | async">
+      <img [src]="emisora.img" (click)="enviar(emisora)">
+      <p class="track">{{emisora.nombre}}</p>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

@@ -1,58 +1,50 @@
-<!--
-  Generated template for the CategoriesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Categorias</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
 
   <h4>Generos</h4>
-  <button class="right" ion-button  small clear (click)="see_more(1)">Ver mas</button>
+  <button class="right" ion-button small clear (click)="see_more(1)">Ver mas</button>
 
   <ion-row>
     <ion-col>
-      <img  src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[1])" >
+      <img src="assets/imgs/audio-7.jpg" (click)="enviar(emisoras[1])">
       <p class="track">Latinas</p>
     </ion-col>
     <ion-col>
-      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[4])">
+      <img src="assets/imgs/audio-6.jpg" (click)="enviar(emisoras[4])">
       <p class="track">Merengue</p>
     </ion-col>
   </ion-row>
 
   <h4>Por region</h4>
-  <button class="right" ion-button  small clear (click)="see_more(2)">Ver mas</button>
+  <button class="right" ion-button small clear (click)="see_more(2)">Ver mas</button>
 
   <ion-row>
     <ion-col>
-      <img src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[10])">
+      <img src="assets/imgs/santiago.jpg" (click)="enviar(emisoras[10])">
       <p class="track">Santiago</p>
     </ion-col>
     <ion-col>
-      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[11])">
+      <img src="assets/imgs/santo_domingo.jpg" (click)="enviar(emisoras[11])">
       <p class="track">Santo Domingo</p>
     </ion-col>
   </ion-row>
 
   <h4>Por frecuencia</h4>
-  <button class="right" ion-button  small clear (click)="see_more(3)">Ver mas</button>
+  <button class="right" ion-button small clear (click)="see_more(3)">Ver mas</button>
 
   <ion-row>
     <ion-col>
-      <img src="assets/imgs/audio-7.jpg"   (click)="enviar(emisoras[14])">
+      <img src="assets/imgs/881FM.jpg" (click)="enviar(emisoras[14])">
       <p class="track">88.1FM</p>
     </ion-col>
     <ion-col>
-      <img src="assets/imgs/audio-6.jpg"   (click)="enviar(emisoras[15])">
+      <img src="assets/imgs/889_FM.jpg" (click)="enviar(emisoras[15])">
       <p class="track">{{emisoras[15].nombre}}</p>
     </ion-col>
   </ion-row>

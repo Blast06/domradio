@@ -7,8 +7,6 @@ $font-path: "../assets/fonts";
 //font awesome setup
 $fa-font-path : "../assets/webfonts";
 
-
-
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
@@ -83,10 +81,21 @@ $colors: (
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
-
-
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+
+
+//tabs settings
+$tabs-md-tab-max-width:240px;
+$tabs-md-tab-min-height: 49px;
+$tabs-md-tab-font-size: 13px;
+$tabs-md-tab-icon-size: 14px;
+
+//toolbar settings
+$toolbar-ios-title-font-size: 1.3rem;
+$toolbar-md-title-font-size: 1.4rem;
+$toolbar-wp-title-font-size: 1.1rem;
+$toolbar-md-height: 1.3rem;

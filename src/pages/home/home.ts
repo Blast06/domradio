@@ -41,11 +41,12 @@ export class HomePage {
                 /**
                  * TODO
                  * CREAR EL ABOUT
+                 * Crear las policies(VER LO DEL GPDR)
                  * CAMBIAR ESTILOS/COLORES A TEXTOS, Y CAMBIAR BACKGROUND EN HOME
                  * VER SI SE PUEDE ENCONTRAR MEJOR .GIF PAR EL HOME.
                  * VER SI SE DEBE AGREGAR SPLASHCREEN
-                 * AGREGAR EMISORAS A FIREBASE(PARA PROBAR LOS DIVs)
-                 * EDITAR LAS IMAGENES Y PONER IMGS ACORDE A EMISORA.
+                 * Editar imagenes de radio con la template
+                 * Agregar las estaciones con sus imagenes(WIP)
                  */
 
     if (navPrm.get('emisora')) {
@@ -85,11 +86,13 @@ export class HomePage {
       this.audio.pause();
       console.log("estado en if: ", this.state);
       this.state = !estado;
+      
 
     } else {
       this.audio.play();
       console.log("estado en else: ", this.state);
       this.state = !estado;
+      
 
     }
 

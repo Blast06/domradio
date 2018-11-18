@@ -35,13 +35,11 @@ export class EmisorasPage {
       case 1:
         this.title = "Generos";
         this.emisoras = afDB.list('generos').valueChanges();
-        console.log(this.emisoras);
         break;
 
       case 2:
         this.title = "Por Region";
         this.emisoras =  afDB.list('regiones').valueChanges();
-        console.log(this.emisoras);
         this.emisoras.subscribe( (data) =>{
           console.log(data);
         });
@@ -50,7 +48,6 @@ export class EmisorasPage {
       case 3:
         this.title = "Por Frecuencia";
         this.emisoras =  afDB.list('frecuencia').valueChanges();
-        console.log(this.emisoras);
         break;
 
       default:

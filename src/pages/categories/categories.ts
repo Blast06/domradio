@@ -18,40 +18,46 @@ export class CategoriesPage {
 
   latina;
 
-  emisoras:Emisora[] = [];
+  emisoras: Emisora[] = [];
   regiones: Observable<any[]>;
   por_frecuencia: Observable<any[]>;
   genero: Observable<any[]>;
-  
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB:AngularFireDatabase) {
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public afDB: AngularFireDatabase) {
+
     this.regiones = afDB.list('regiones').valueChanges();
+    this.regiones.subscribe((data) => {
+      console.log(data);
+    });
 
     //asi me crea un clon, si lo pongo sin el splice, seria el mismo objeto 
     //y afectaria las operaciones CRUD del mismo
     this.emisoras = EMISORAS.slice(0);
     this.latina = this.emisoras[0].url;
 
-    
-    
-    
+
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriesPage');
   }
 
-  enviar(emisora){
+  enviar(emisora) {
 
     // console.log(emisora);
-    
-    this.navCtrl.push(HomePage, {emisora:emisora});
+
+    this.navCtrl.push(HomePage, { emisora: emisora });
   }
 
-  see_more(number){
-    this.navCtrl.push(EmisorasPage, {number: number})
+  see_more(number) {
+    this.navCtrl.push(EmisorasPage, { number: number })
 
   }
 

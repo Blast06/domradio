@@ -1,13 +1,40 @@
-
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>About</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title >About</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+
+    <!-- Top -->
+    <div style="background: url(assets/imgs/aboutus.jpg)" class="img-cover relative">
+        <div class="absolute full ov-img-full"></div>
+        <div class="ptb50 plr20 center relative z-shi">
+            <h4 class="text-white up">About Us</h4>
+            <p class="text-white">{{informacion[0]}}</p>
+        </div>
+    </div>
+
+
+    <ion-list inset *ngFor="let item of generalInfo | async">
+        <button ion-item>
+            {{item.nombre}}
+        </button>
+    </ion-list>
+
+
+    <!-- Footer standard -->
+    <div class="bg-dark center p20">
+        <p class="font-14"> &copy; DTSoftware - Todos los derechos reservados</p>
+        <img src="assets/img-icons/website-w.png" title="Website" class="p10">
+        <img src="assets/img-icons/email-w.png" title="Email" class="p10">
+        <!-- <img src="assets/img-icons/online-support-w.png" title="Support" class="p10"> -->
+        <!-- <img src="assets/img-icons/facebook-w.png" title="Facebook" class="p10"> -->
+    </div>
+    <!-- End footer standard -->
+
+
 
 </ion-content>

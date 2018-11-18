@@ -21,6 +21,9 @@ import { HomePage } from '../pages/home/home';
 import { PoliciesPage } from '../pages/policies/policies';
 import { firebaseConfig } from '../config/config';
 
+//PLUGINS
+import { AppRate } from '@ionic-native/app-rate';
+
 
 
 @NgModule({
@@ -33,6 +36,7 @@ import { firebaseConfig } from '../config/config';
     TabsPage,
     CategoriesPage,
     SpinnerPage,
+    
 
   ],
   imports: [
@@ -59,6 +63,7 @@ import { firebaseConfig } from '../config/config';
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    AppRate,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
