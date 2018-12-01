@@ -38,6 +38,7 @@ export class AboutPage {
                 this.about.subscribe( data => this.informacion = data);
 
                 this.generalInfo = afDB.list('informacion').valueChanges();
+                this.generalInfo.subscribe( data => console.log(data));
                 this.masapps = afDB.list('informacion/masapps').valueChanges();
   }
 

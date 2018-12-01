@@ -1,15 +1,11 @@
+import { HomePage } from './../home/home';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Emisora } from '../../datos/emisoras.interface';
 
-/**
- * Generated class for the EmisorasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @Component({
   selector: 'page-emisoras',
@@ -61,9 +57,9 @@ export class EmisorasPage {
 
   enviar(emisora:Emisora){
     console.log(emisora);
-
-
+    this.navCtrl.push(HomePage, { emisora: emisora });
   }
+  
 
 }
 

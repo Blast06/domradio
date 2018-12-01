@@ -23,6 +23,7 @@ import { firebaseConfig } from '../config/config';
 
 //PLUGINS
 import { AppRate } from '@ionic-native/app-rate';
+import { NetworkProvider } from '../providers/network/network';
 
 
 
@@ -64,7 +65,8 @@ import { AppRate } from '@ionic-native/app-rate';
     SplashScreen,
     AngularFireDatabase,
     AppRate,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NetworkProvider
   ]
 })
 export class AppModule {}

@@ -42,11 +42,11 @@ export class HomePage {
                  * TODO
                  * CREAR EL ABOUT
                  * Crear las policies(VER LO DEL GPDR)
-                 * CAMBIAR ESTILOS/COLORES A TEXTOS, Y CAMBIAR BACKGROUND EN HOME
+                 * CAMBIAR BACKGROUND EN HOME
                  * VER SI SE PUEDE ENCONTRAR MEJOR .GIF PAR EL HOME.
                  * VER SI SE DEBE AGREGAR SPLASHCREEN
-                 * Editar imagenes de radio con la template
-                 * Agregar las estaciones con sus imagenes(WIP)
+                 * Terminar de agregar todas las estaciones
+                 *
                  */
 
     if (navPrm.get('emisora')) {
