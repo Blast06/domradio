@@ -56,8 +56,6 @@ import { HTTP } from '@ionic-native/http';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
-    
-    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

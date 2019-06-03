@@ -16,7 +16,7 @@ export class EmisorasPage {
 
   number: any;
   title: string;
-  emisoras: Observable<any[]>;
+  emisoras: Observable<Emisora[]>;
 
   regiones: Observable<any[]>;
   por_frecuencia: Observable<any[]>;
