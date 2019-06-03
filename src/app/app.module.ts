@@ -1,6 +1,7 @@
-import { SpinnerPage } from './../pages/spinner/spinner';
-import { CategoriesPage } from './../pages/categories/categories';
-import { TabsPage } from './../pages/tabs/tabs';
+
+
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -20,11 +21,18 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PoliciesPage } from '../pages/policies/policies';
 import { firebaseConfig } from '../config/config';
+import { StatusPage } from './../pages/status/status';
+import { SpinnerPage } from './../pages/spinner/spinner';
+import { CategoriesPage } from './../pages/categories/categories';
+import { TabsPage } from './../pages/tabs/tabs';
 
 //PLUGINS
 import { AppRate } from '@ionic-native/app-rate';
 import { NetworkProvider } from '../providers/network/network';
-
+import { Network } from '@ionic-native/network';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import {BackgroundMode} from "@ionic-native/background-mode";
+import { HTTP } from '@ionic-native/http';
 
 
 @NgModule({
@@ -37,6 +45,7 @@ import { NetworkProvider } from '../providers/network/network';
     TabsPage,
     CategoriesPage,
     SpinnerPage,
+    StatusPage,
     
 
   ],
@@ -45,7 +54,10 @@ import { NetworkProvider } from '../providers/network/network';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,6 +70,8 @@ import { NetworkProvider } from '../providers/network/network';
     PoliciesPage,
     CategoriesPage,
     SpinnerPage,
+    StatusPage
+    
   
   ],
   providers: [
@@ -66,7 +80,13 @@ import { NetworkProvider } from '../providers/network/network';
     AngularFireDatabase,
     AppRate,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NetworkProvider
+    Network,
+    HttpClient,
+    NetworkProvider,
+    InAppBrowser,
+    BackgroundMode,
+    
+    
   ]
 })
 export class AppModule {}

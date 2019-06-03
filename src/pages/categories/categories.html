@@ -4,8 +4,9 @@
   </ion-navbar>
 </ion-header>
 
+<page-status *ngIf="np.getStatus()"></page-status>
 
-<ion-content padding>
+<ion-content padding *ngIf="np.getStatus()">
 
   <h4>Generos</h4>
   <button class="right" ion-button small clear (click)="see_more(1)">Ver mas</button>

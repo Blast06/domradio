@@ -1,3 +1,4 @@
+import { NetworkProvider } from './../../providers/network/network';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -27,8 +28,10 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController, public navPrm: NavParams,
-              public afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, 
+              public navPrm: NavParams,
+              public afDB: AngularFireDatabase,
+              public np:NetworkProvider,) {
                 this.items = afDB.list('regiones').valueChanges();
 
                 this.items.subscribe((data)=>{
@@ -40,13 +43,15 @@ export class HomePage {
 
                 /**
                  * TODO
-                 * CREAR EL ABOUT
-                 * Crear las policies(VER LO DEL GPDR)
-                 * CAMBIAR BACKGROUND EN HOME
-                 * VER SI SE PUEDE ENCONTRAR MEJOR .GIF PAR EL HOME.
-                 * VER SI SE DEBE AGREGAR SPLASHCREEN
+                 * 
+                 * Integrate Lazy Loading
+                 * Integrate GPDR
+                 * Fix app rate that appears twice- FIXED
+                 * fix splashscreen(does not appear)
                  * Terminar de agregar todas las estaciones
-                 *
+                 * Fix footer height
+                 * put a warning when there's no connection
+                 * fix background app process
                  */
 
     if (navPrm.get('emisora')) {
@@ -72,7 +77,7 @@ export class HomePage {
     this.audio.play();
   }
 
-  loading(){
+  loading(){ 
     this.audio_tag.addEventListener("progress", function(){
      console.log("Buscando...");
 

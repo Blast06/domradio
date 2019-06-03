@@ -13,12 +13,14 @@ export enum ConnectionStatusEnum {
 @Injectable()
 export class NetworkProvider {
 
+  online:boolean = true;
+
   previousStatus;
 
   constructor(public http: HttpClient,
-    public alertCtrl: AlertController,
-    public network: Network,
-    public eventCtrl: Events) {
+              public alertCtrl: AlertController,
+              public network: Network,
+              public eventCtrl: Events) {
 
     console.log('Hello NetworkProvider Provider');
 
@@ -29,15 +31,23 @@ export class NetworkProvider {
     this.network.onDisconnect().subscribe(() => {
       if (this.previousStatus === ConnectionStatusEnum.Online) {
         this.eventCtrl.publish('network:offline');
+        // this.online = false;
+        console.log("en network provider");
       }
       this.previousStatus = ConnectionStatusEnum.Offline;
     });
     this.network.onConnect().subscribe(() => {
       if (this.previousStatus === ConnectionStatusEnum.Offline) {
         this.eventCtrl.publish('network:online');
+        // this.online = true;
+        console.log("en network provider");
       }
       this.previousStatus = ConnectionStatusEnum.Online;
     });
+  }
+
+  getStatus():boolean{
+    return this.online;
   }
 
 }

@@ -1,3 +1,4 @@
+import { NetworkProvider } from './../../providers/network/network';
 import { HomePage } from './../home/home';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs/Observable';
@@ -22,7 +23,10 @@ export class EmisorasPage {
   generos: Observable<any[]>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public afDB:AngularFireDatabase) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public afDB:AngularFireDatabase,
+              public np:NetworkProvider,) {
 
     this.number = navParams.get('number');
     console.log(this.number);

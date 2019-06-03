@@ -6,8 +6,9 @@
 
 </ion-header>
 
+<page-status *ngIf="np.getStatus()" ></page-status>
 
-<ion-content padding>
+<ion-content padding *ngIf="np.getStatus()">
 
   <h4 text-center>Emisoras</h4>
 

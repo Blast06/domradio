@@ -1,3 +1,4 @@
+import { NetworkProvider } from './../../providers/network/network';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HomePage } from './../home/home';
@@ -28,7 +29,8 @@ export class CategoriesPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public afDB: AngularFireDatabase) {
+    public afDB: AngularFireDatabase,
+    public np:NetworkProvider) {
 
     this.regiones = afDB.list('regiones').valueChanges();
     this.regiones.subscribe((data) => {

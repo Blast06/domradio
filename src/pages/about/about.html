@@ -5,7 +5,8 @@
 </ion-header>
 
 
-<ion-content>
+<page-status *ngIf="np.getStatus()"></page-status>
+<ion-content *ngIf="np.getStatus()">
 
 
     <!-- Top -->
@@ -18,15 +19,16 @@
     </div>
 
 
-    <ion-list inset *ngFor="let item of informacion">
-        <button ion-item>
-            {{item}}
-        </button>
-    </ion-list>
+    <div class="p20 center">
+        <h4 class="mb0">Informacion General</h4>
+        <div class="bg-standard pt1 plr30 inline mt0"></div>
+        <p> {{ informacion[1] }} </p>
+        <p class="mb30"  (click)="redirect()"> Ver politica de privacidad </p>
+      </div>
 
 
     <!-- Footer standard -->
-    <div class="bg-dark center p20">
+    <div class="bg-dark center p10">
         <p class="font-14"> &copy; DTSoftware - Todos los derechos reservados</p>
         <img src="assets/img-icons/website-w.png" title="Website" class="p10">
         <img src="assets/img-icons/email-w.png" title="Email" class="p10">
