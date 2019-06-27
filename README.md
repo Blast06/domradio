@@ -2,7 +2,7 @@
 
 
 
-Para correr la app, clonar el repositorio y dentro de este, ejecutar **npm install ** luego, **ionic serve**
+Para correr la app, clonar el repositorio y dentro de este, ejecutar **npm install** luego, **ionic serve**
 
 
 
