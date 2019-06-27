@@ -1,6 +1,11 @@
 # App de emisoras de radios dominicanas!
 
+
+
 Para correr la app, clonar el repositorio y dentro de este, ejecutar **npm install ** luego, **ionic serve**
+
+
+
 To run this project you neet to clone this repo and run **npm install** in the project root, then **ionic serve**
 
 
